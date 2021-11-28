@@ -11,7 +11,7 @@ function shortPath(graph, start, end) {
    const costs = {};
    const processed = [];
    let neighbors = {};
-   let shortPath = {};
+   let shortestPath = {};
 
    Object.keys(graph).forEach(node => {
       if (node !== start) {
@@ -20,9 +20,9 @@ function shortPath(graph, start, end) {
       }
    });
 
-   let node = findNodeLowestCost(costs, processed);
+   let node = findNodeLowestCost(graph[start], processed);
    if (node) {
-      shortPath[node] = costs[node];
+      shortestPath[node] = costs[node];
    }
 
    while (node) {
@@ -38,11 +38,11 @@ function shortPath(graph, start, end) {
       processed.push(node);
       node = findNodeLowestCost(graph[node], processed);
       if (node) {
-         shortPath[node] = costs[node];
+         shortestPath[node] = costs[node];
       }
     }
     
-   return shortPath;
+   return shortestPath;
 }
 
 function findNodeLowestCost(costs, processed) {
