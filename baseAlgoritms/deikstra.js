@@ -40,8 +40,8 @@ function shortPath(graph, start, end) {
       if (node) {
          shortestPath[node] = costs[node];
       }
-    }
-    
+   }
+
    return shortestPath;
 }
 
