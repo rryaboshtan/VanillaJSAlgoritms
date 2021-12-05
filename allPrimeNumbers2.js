@@ -10,10 +10,10 @@ function getPrimes(num) {
          }
       }
    }
-   console.log(Math.sqrt(num));
+   console.log(seive.length);
    return primes;
 }
 
-console.time();
-console.log(getPrimes(120000));
-console.timeEnd();
+// console.time();
+console.log(getPrimes(120));
+// console.timeEnd();
