@@ -1,4 +1,4 @@
-const input1 = [1, 0, 0, 0, 1, 0, 1]; // 2
+const input1 = [0, 0, 0, 0, 1, 0, 1]; // 2
 const input2 = [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]; // 2
 
 const maxDistToClosest = function (seats) {
