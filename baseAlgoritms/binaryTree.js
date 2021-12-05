@@ -24,12 +24,6 @@ class BinaryTree {
                node = node.left;
             }
          }
-
-        //  if (value > node.value) {
-        //     node.right = newNode;
-        //  } else {
-        //     node.left = newNode;
-        //  }
       }
    }
 
