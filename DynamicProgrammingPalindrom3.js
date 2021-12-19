@@ -21,17 +21,9 @@ function longestPalindrom(s) {
 
    longest = 1;
    start = 0;
-   // Объявляем матрицу состояний для динамического программирования
-   dp = new Array(len);
-   for (let i = 0; i < dp.length; i++) {
-      dp[i] = new Array(len);
-   }
 
    for (let i = 0; i < len - 1; i++) {
-      dp[i][i] = 1;
-
       if (s[i] === s[i + 1]) {
-         dp[i][i + 1] = 1;
          start = i;
          longest = 2;
       }
@@ -41,8 +33,7 @@ function longestPalindrom(s) {
       for (let i = 0; i + l - 1 < len; i++) {
          j = l + i - 1;
 
-         if (s[i] === s[j] && dp[i + 1][j - 1] === 1) {
-            dp[i][j] = 1;
+         if (s[i] === s[j]) {
             start = i;
             longest = l;
          }
@@ -54,3 +45,4 @@ function longestPalindrom(s) {
 
 console.log(longestPalindrom('babad')); // 'aba'
 console.log(longestPalindrom('babab')); // 'babab'
+console.log(longestPalindrom('babafff')); // 'bab' или 'fff'
